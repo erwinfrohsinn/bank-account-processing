@@ -59,4 +59,6 @@ The program needs the modules __pandas, begins, logging, json, pathlib, os__
 
 __f-strings__ are used, therefore, __python 3.6__ or newer is required.
 
+__Caveat:__ Not tested with other OS's than linux; not tested with other files than "Deutsche Bank Online Banking
+
 Thanks to *python* and *pandas* developers and community!
