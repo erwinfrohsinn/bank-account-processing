@@ -56,6 +56,7 @@ Usage:
 
 
 The program needs the modules __pandas, begins, logging, json, pathlib, os__
+
 __f-strings__ are used, therefore, __python 3.6__ or newer is required.
 
 Thanks to *python* and *pandas* developers and community!
