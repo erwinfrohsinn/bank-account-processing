@@ -1,5 +1,5 @@
 # bank-account-processing
-consolidates, categorizes, pivots bank account booking lists (downloaded from your online banking)
+__consolidates, categorizes, pivots__ bank account booking lists (downloaded from your online banking)
 
 
 Developed for *"Deutsche Bank"* bank statements, might be adjustable for other banks
@@ -34,20 +34,28 @@ This *.json* file determines the catigorization of bookings, and this works as f
 The fields "Umsatzart;Begünstigter / Auftraggeber;Verwendungszweck" (= booking type;sender or receiver;booking text)
 are concatenated. If one of the keywords in katmap is found in the concatenation, the booking is marked with the category and booking direction belonging to the keyword.
 
+A basic *"KatMapss.json"* is created by this program, if none is found. Modify it according to your needs; next time your *"KatMapss.json"* will be used.
+
 __Caveat:__ This program does not check whether a keyword occurs more than once.
 
 Also the categorized data is saved (*"Kontoumsaetze_bbb_aaaaaaass_Kategorized.csv"*) so that you can read them with
 a spreadsheet program like __libre office calc__.
 The categorization is always created anew, so if you change *"KatMapss.json"*, also the past data is newly categorized.
+
 As a final step, this program creates *"PivotTabless.csv"*, which shows the categories on the vertical axis and Year/Month horizontally.
 
 During the program run, a log file *"kontoauszug.log"* is created.
 
+## Technical hints:
 Usage: 
 `python3 kontoauszug.py fname='Kontoumsaetze_bbb_aaaaaaass_yyyymmdd_hhmmss.csv' \
                         pname='/home/myname/development/Kontoauszuege/'
 `
 
 (More parameters are described in the source code, they are related to logging and you can keep them alone)
+
+
+The program needs the modules __pandas, begins, logging, json, pathlib, os__
+__f-strings__ are used, therefore, __python 3.6__ or newer is required.
 
 Thanks to *python* and *pandas* developers and community!
